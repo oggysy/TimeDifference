@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var differentTime: UILabel!
     var currentTimeData = Date()
     var pressedButtonTimeData:Date? = nil
-    var differentTimeData:Int? = nil
     let dateFormatter = DateFormatter()
     
     
@@ -29,8 +28,7 @@ class ViewController: UIViewController {
         currentTimeData = Date()
         currentTime.text = dateFormatter.string(from: currentTimeData)
         guard let pressedButtonTimeData = pressedButtonTimeData else {return}
-        differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData))
-        guard let differentTimeData = differentTimeData else {return}
+        let differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData))
         differentTime.text = String(differentTimeData)
     }
     
