@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentTimeLabel: UILabel!
     @IBOutlet weak var pressedButtonTimeLabel: UILabel!
     @IBOutlet weak var differentTimeLabel: UILabel!
-    var currentTimeData = Date()
-    var pressedButtonTimeData:Date? = nil
+    var currentTimeDate = Date()
+    var pressedButtonTimeDate:Date? = nil
     let dateFormatter = DateFormatter()
     
     
@@ -25,18 +25,18 @@ class ViewController: UIViewController {
     
     
     @objc func updateTimer(){
-        currentTimeData = Date()
-        currentTimeLabel.text = dateFormatter.string(from: currentTimeData)
-        guard let pressedButtonTimeData = pressedButtonTimeData else {return}
-        let differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData))
-        differentTimeLabel.text = String(differentTimeData)
+        currentTimeDate = Date()
+        currentTimeLabel.text = dateFormatter.string(from: currentTimeDate)
+        guard let pressedButtonTimeDate = pressedButtonTimeDate else {return}
+        let differentTimeDate = Int(currentTimeDate.timeIntervalSince(pressedButtonTimeDate))
+        differentTimeLabel.text = String(differentTimeDate)
     }
     
     
     @IBAction func pressedButton(_ sender: UIButton) {
-        pressedButtonTimeData = Date()
-        guard let pressedButtonTimeData = pressedButtonTimeData else {return}
-        pressedButtonTimeLabel.text = dateFormatter.string(from: pressedButtonTimeData)
+        pressedButtonTimeDate = Date()
+        guard let pressedButtonTimeDate = pressedButtonTimeDate else {return}
+        pressedButtonTimeLabel.text = dateFormatter.string(from: pressedButtonTimeDate)
     }
 }
 
