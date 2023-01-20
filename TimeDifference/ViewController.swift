@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var currentTime: UILabel!
-    @IBOutlet weak var pressedButtonTime: UILabel!
-    @IBOutlet weak var differentTime: UILabel!
+    @IBOutlet weak var currentTimeLabel: UILabel!
+    @IBOutlet weak var pressedButtonTimeLabel: UILabel!
+    @IBOutlet weak var differentTimeLabel: UILabel!
     var currentTimeData = Date()
     var pressedButtonTimeData:Date? = nil
     let dateFormatter = DateFormatter()
@@ -26,17 +26,17 @@ class ViewController: UIViewController {
     
     @objc func updateTimer(){
         currentTimeData = Date()
-        currentTime.text = dateFormatter.string(from: currentTimeData)
+        currentTimeLabel.text = dateFormatter.string(from: currentTimeData)
         guard let pressedButtonTimeData = pressedButtonTimeData else {return}
         let differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData))
-        differentTime.text = String(differentTimeData)
+        differentTimeLabel.text = String(differentTimeData)
     }
     
     
     @IBAction func pressedButton(_ sender: UIButton) {
         pressedButtonTimeData = Date()
         guard let pressedButtonTimeData = pressedButtonTimeData else {return}
-        pressedButtonTime.text = dateFormatter.string(from: pressedButtonTimeData)
+        pressedButtonTimeLabel.text = dateFormatter.string(from: pressedButtonTimeData)
     }
 }
 

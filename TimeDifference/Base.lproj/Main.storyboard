@@ -142,9 +142,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="currentTime" destination="spi-3s-fNZ" id="Zj4-sa-38b"/>
-                        <outlet property="differentTime" destination="Til-9l-22q" id="ed1-Bf-Wlg"/>
-                        <outlet property="pressedButtonTime" destination="W3f-aI-33d" id="06P-gc-NHD"/>
+                        <outlet property="currentTimeLabel" destination="spi-3s-fNZ" id="Zj4-sa-38b"/>
+                        <outlet property="differentTimeLabel" destination="Til-9l-22q" id="ed1-Bf-Wlg"/>
+                        <outlet property="pressedButtonTimeLabel" destination="W3f-aI-33d" id="06P-gc-NHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
