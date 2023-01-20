@@ -35,7 +35,8 @@ class ViewController: UIViewController {
     
     @IBAction func pressedButton(_ sender: UIButton) {
         pressedButtonTimeData = Date()
-        pressedButtonTime.text = dateFormatter.string(from: pressedButtonTimeData!)
+        guard let pressedButtonTimeData = pressedButtonTimeData else {return}
+        pressedButtonTime.text = dateFormatter.string(from: pressedButtonTimeData)
     }
 }
 
