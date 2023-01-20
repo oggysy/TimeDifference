@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var currentTime: UILabel!
     @IBOutlet weak var pressedButtonTime: UILabel!
     @IBOutlet weak var differentTime: UILabel!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         dateFormatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yMMMdHms", options: 0, locale: Locale(identifier: "ja_JP"))
         Timer.scheduledTimer(timeInterval: 1.0, target:self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
-        }
+    }
     
     
     @objc func updateTimer(){
@@ -41,6 +41,6 @@ class ViewController: UIViewController {
     }
     
     
-
+    
 }
 
