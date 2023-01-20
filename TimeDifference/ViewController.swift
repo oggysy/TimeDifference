@@ -28,10 +28,10 @@ class ViewController: UIViewController {
     @objc func updateTimer(){
         currentTimeData = Date()
         currentTime.text = dateFormatter.string(from: currentTimeData)
-        if pressedButtonTimeData != nil {
-            differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData!))
-            differentTime.text = String(differentTimeData!)
-        }
+        guard let pressedButtonTimeData = pressedButtonTimeData else {return}
+        differentTimeData = Int(currentTimeData.timeIntervalSince(pressedButtonTimeData))
+        guard let differentTimeData = differentTimeData else {return}
+        differentTime.text = String(differentTimeData)
     }
     
     
@@ -39,8 +39,5 @@ class ViewController: UIViewController {
         pressedButtonTimeData = Date()
         pressedButtonTime.text = dateFormatter.string(from: pressedButtonTimeData!)
     }
-    
-    
-    
 }
 
